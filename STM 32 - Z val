@@ -1,21 +1,3 @@
-/* USER CODE BEGIN Header */
-/**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
-/* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "i2c.h"
@@ -26,6 +8,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "l3gd20.h"
+#include <math.h> // for mathematical operations
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -58,6 +41,10 @@ uint8_t usb_flag = 0x00; // whether or not new data is received.
 /* Axes variables */
 float Xval, Yval, Zval;
 
+/* Gyroscope calibration variables */
+float gyro_bias[3] = {0.0f}; // Bias in X, Y, Z axes
+float gyro_scale = 1.0f; // Scale factor for gyroscope readings
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -87,6 +74,8 @@ float Xval, Yval, Zval;
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void set_led(uint8_t counter);
+void calibrate_gyroscope(void);
+void filter_gyroscope_data(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -139,6 +128,9 @@ int main(void)
   // Initialize spi buffer
   L3GD20_ReadXYZAngRate_Raw(spi_Buffer);
 
+  // Perform gyroscope calibration
+  calibrate_gyroscope();
+
   /* Enable the Listen mode with Interrupts for the I2C:
    * The Listen Mode will wait for an I2C Event to occur
    * and will be treated in the Interrupt Service Routine of the I2C. */
@@ -184,10 +176,8 @@ int main(void)
     {
         L3GD20_ReadXYZAngRate(float_Buffer);
 
-        // Extract X, Y, Z axes data
-        Xval = float_Buffer[0];
-        Yval = float_Buffer[1];
-        Zval = float_Buffer[2];
+        // Apply data filtering
+        filter_gyroscope_data();
 
         // Re-enable interrupt
         L3GD20_DisableIT(L3GD20_INT2);
@@ -250,7 +240,6 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
 
 /**
   * @brief  EXTI line detection callback.
@@ -448,6 +437,48 @@ void Error_Handler(void)
   {
   }
   /* USER CODE END Error_Handler_Debug */
+}
+
+/**
+  * @brief  Perform gyroscope calibration.
+  * @retval None
+  */
+void calibrate_gyroscope(void)
+{
+  // Read gyroscope data multiple times and calculate average
+  const int num_samples = 100;
+  float gyro_sum[3] = {0.0f};
+  for (int i = 0; i < num_samples; i++) {
+    L3GD20_ReadXYZAngRate(float_Buffer);
+    gyro_sum[0] += float_Buffer[0];
+    gyro_sum[1] += float_Buffer[1];
+    gyro_sum[2] += float_Buffer[2];
+    HAL_Delay(1); // Delay between samples
+  }
+
+  // Calculate bias
+  gyro_bias[0] = gyro_sum[0] / num_samples;
+  gyro_bias[1] = gyro_sum[1] / num_samples;
+  gyro_bias[2] = gyro_sum[2] / num_samples;
+}
+
+/**
+  * @brief  Apply filtering to gyroscope data.
+  * @retval None
+  */
+void filter_gyroscope_data(void)
+{
+  // Apply calibration (remove bias)
+  float_Buffer[0] -= gyro_bias[0];
+  float_Buffer[1] -= gyro_bias[1];
+  float_Buffer[2] -= gyro_bias[2];
+
+  // Apply scaling
+  float_Buffer[0] *= gyro_scale;
+  float_Buffer[1] *= gyro_scale;
+  float_Buffer[2] *= gyro_scale;
+
+  // Additional filtering techniques can be applied here if needed
 }
 
 #ifdef  USE_FULL_ASSERT
