@@ -40,10 +40,12 @@ Flash the firmware onto the STM32 development board using STM32CubeIDE.
 ## **Jetson Nano Python Script:**
 Ensure that Python 3 is installed on your Jetson Nano.
 Install the necessary dependencies by running the following command in the terminal:
-pip install pyserial
+
+```pip install pyserial```
 
 Run the Python script using the following command:
-python USB_gyro_example.py
+
+```python USB_gyro_example.py```
 
 # **Results**
 
