@@ -14,10 +14,11 @@ Jetson Nano Python Script: The Python script running on the Jetson Nano communic
 
 Block Diagram
 The following block diagram illustrates the system architecture and data flow between the components:
-
-
-
-
+.
+.
+.
+.
+.
 
 Parameters
 
