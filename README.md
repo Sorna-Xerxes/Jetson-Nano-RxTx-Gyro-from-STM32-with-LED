@@ -11,8 +11,13 @@ The system comprises two main components:
 
 STM32 Firmware: This component is responsible for collecting gyroscopic data from onboard sensors and transmitting it over USB to the Jetson Nano. The firmware is developed using STM32CubeIDE, an integrated development environment for STM32 microcontrollers. The firmware is configured to interface with the gyroscope sensor, read the roll and pitch angles, and format the data for transmission over USB.
 Jetson Nano Python Script: The Python script running on the Jetson Nano communicates with the STM32 board over USB to receive gyroscopic data. It parses the received data to extract the roll and pitch angles and then controls the onboard LEDs of the STM32 board to visually indicate these angles. The script utilizes the PySerial library for serial communication with the STM32 board.
+
 Block Diagram
 The following block diagram illustrates the system architecture and data flow between the components:
+
+
+
+
 
 Parameters
 
