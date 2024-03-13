@@ -59,6 +59,7 @@ The STM32 Roll and Pitch Indicator project demonstrates the integration of gyros
 
 ## **PySerial:**
 PySerial is a Python library used for serial communication. It provides support for accessing serial ports and communication with serial devices. Install PySerial using the following command:
+
 ```pip install pyserial```
 
 ## **STM32 Firmware:** 
