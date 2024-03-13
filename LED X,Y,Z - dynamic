@@ -1,0 +1,50 @@
+import serial
+import time
+
+port_name = "/dev/ttyACM0"
+stm32 = serial.Serial(port_name, 9600, timeout=1)
+print("open")
+
+while True:
+    # Command to request gyro data
+    packet = bytearray()
+    packet.append(0x02)  # Command for get_gyro
+
+    stm32.write(packet)
+    time.sleep(0.1) 
+
+    # Read gyro response
+    gyro_data = stm32.readline().decode("utf-8")
+    time.sleep(0.1)
+
+    # Parse gyro data
+    x = float(gyro_data.split(',')[0].split(':')[1].strip())
+    y = float(gyro_data.split(',')[1].split(':')[1].strip())
+    Z = float(gyro_data.split(',')[2].split(':')[1].strip())
+
+    # Determine LED based on X and Y values
+    led = None
+    if x > 0 and y > 0:
+        led = 5
+    elif x > 0 and y < 0:
+        led = 7
+    elif x < 0 and y < 0:
+        led = 1
+    elif x < 0 and y > 0:
+        led = 3
+
+    # Set LED command
+    if led is not None:
+        packet = bytearray()
+        packet.append(0x01)  # Command for setting LED
+        packet.append(led)   # LED number
+        
+        stm32.write(packet)
+        time.sleep(0.1)
+        data = stm32.readline().decode("utf-8")  # Read response
+        time.sleep(0.1)
+        print(data)
+
+    time.sleep(3)  # Wait for 'n' seconds before requesting gyro data again
+
+stm32.close()
