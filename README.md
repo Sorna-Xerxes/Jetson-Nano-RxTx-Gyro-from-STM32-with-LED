@@ -58,6 +58,11 @@ pip install pyserial
 
 **STM32 Firmware:** The STM32 firmware provided in this project is required to enable USB communication and obtain gyroscopic data from the STM32 development board.
 
+**link to Code**
+.
+.
+.
+
 **Table of Contents**
 
 USB_gyro_example.py: This Python script controls the STM32 board and indicates the roll and pitch using onboard LEDs.
