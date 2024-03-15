@@ -32,7 +32,7 @@ Pitch Angle: The angle of rotation around the lateral axis of the STM32 board, m
 
 # **Instructions**
 
-# **To run the code:**
+To run the code:
 
 ## **STM32 Firmware:**
 Import the provided STM32 project into STM32CubeIDE.
