@@ -29,7 +29,8 @@ The following block diagram illustrates the system architecture and data flow be
 
 Roll Angle: The angle of rotation around the longitudinal axis of the STM32 board, measured in degrees.
 Pitch Angle: The angle of rotation around the lateral axis of the STM32 board, measured in degrees.
-Instructions
+
+# **Instructions**
 
 # **To run the code:**
 
