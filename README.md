@@ -88,21 +88,20 @@ x_diff is < -5000, it's a "Pitch Up" movement. (LED 0)
 y_diff is > 20000, it's a "Roll West" movement (LED 6)
 y_diff is < -20000, it's a "Roll East" movement. (LED 2)
 ```
-
-## DEPENDENCIES
-
-- **1. PySerial:** It is a Python library used for serial communication. It provides support for accessing serial ports and communication with serial devices. Install PySerial using the following command:
-```bash
-pip install pyserial
-```
-- **2. re:** The regular expression module in Python, utilized for pattern matching with regular expressions. In this context, it's employed to `extract x, y, and z coordinates from gyro data`.
-
-- **3. time:** Python's standard library module offering various time-related functions. Within the code, it `introduces delays between operations`, preventing the code from executing too rapidly and potentially overloading the connected device.
-
 ## OUTCOME
 The STM32 Roll, Pitch and Yaw Indicator project demonstrates the integration of gyroscopic data sensing and LED control to create a practical orientation indicator system. The project showcases the capabilities of microcontroller-based systems for sensor integration and real-time data processing. Additionally, the project serves as a foundation for further exploration into embedded systems development and sensor-based applications.
 
-## Table of Contents
+## DEPENDENCIES
+
+- **PySerial:** It is a Python library used for serial communication. It provides support for accessing serial ports and communication with serial devices. Install PySerial using the following command:
+```bash
+pip install pyserial
+```
+- **re:** The regular expression module in Python, utilized for pattern matching with regular expressions. In this context, it's employed to `extract x, y, and z coordinates from gyro data`.
+
+- **time:** Python's standard library module offering various time-related functions. Within the code, it `introduces delays between operations`, preventing the code from executing too rapidly and potentially overloading the connected device.
+
+## TABLE OF CONTENTS
 
 | File Name        | Brief           |
 | ------------- |:-------------:|
@@ -111,13 +110,13 @@ The STM32 Roll, Pitch and Yaw Indicator project demonstrates the integration of 
 | pyserial-master.zip      | Install pySerial on Jetson Nano      |
 |  VS Code - X,Y,Z (LED Logic - Future)      | Contains the Python code for future prospects where the code can be improvised with data parsing, extending LED logic for three axes, or improvising using data fusion      |
 
-## Credits
+## CREDITS
+The STM32F3 discovery board and Jetson Nano were provided as part of the project materials for the completion of our coursework in Embedded Systems for the MSc in Robotics, AI, and Autonomous Systems at City, University of London.
 
-The STM32 firmware was provided as part of the project materials.
-PySerial library: PySerial
+Your text looks good! It's clear and concise. However, there's a small typo in "CONTRIBUTONS" which should be "CONTRIBUTIONS". Here's the corrected version:
 
-## Contributions to the Project
-Your contributions to this project are highly appreciated. To contribute:
-1. Fork the repository.
-2. Make your changes or enhancements.
-3. Submit a pull request for review.
+## CONTRIBUTIONS ARE WELCOMED
+Contributions to this project are highly appreciated. To contribute:
+- Fork the repository.
+- Make your changes or enhancements.
+- Submit a pull request for review.
