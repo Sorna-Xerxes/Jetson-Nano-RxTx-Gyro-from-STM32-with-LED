@@ -95,7 +95,7 @@ The STM32 firmware provided in this project is required to enable USB communicat
 .
 .
 .
-
+.
 # **Table of Contents**
 
 USB_gyro_example.py: This Python script controls the STM32 board and indicates the roll and pitch using onboard LEDs.
