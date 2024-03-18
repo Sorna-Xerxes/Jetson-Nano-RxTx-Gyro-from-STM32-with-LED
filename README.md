@@ -49,7 +49,8 @@ The following block diagram illustrates the system architecture and data flow be
 ### Data Parameters:
 - **Roll Angle:** The angle of rotation around the longitudinal axis of the STM32 board, measured in degrees.
 - **Pitch Angle:** The angle of rotation around the lateral axis of the STM32 board, measured in degrees.
-- **Yaw Angle:** The angle of rotation around the vertical axis of the STM32 board, measured in degrees.![Aircraft_Axis](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/38ef594b-36a5-4b1f-b638-c781e10af137)
+- **Yaw Angle:** The angle of rotation around the vertical axis of the STM32 board, measured in degrees.
+![Aircraft_Axis](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/38ef594b-36a5-4b1f-b638-c781e10af137)
 
 
 ## INSTRUCTIONS
@@ -58,7 +59,8 @@ To run the code:
 **STM32 Firmware:**
 - Import the provided STM32 project file Project_Gyro.zip into STM32CubeIDE. (Unarchive it into the STM32 Workspace before importing).
 - All necessary project configurations, such as enabling USB communication and integrating the gyroscope sensor, have already been pre-configured. These settings encompass connectivity interfaces (SPI, I2C), clock configurations, baud rates (9600), etc.
-- Flash the firmware onto the STM32 development board using STM32CubeIDE.![STM32_Printout_ _Configurations](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/96b94cbe-d52a-43ed-8354-0e616d482035)
+- Flash the firmware onto the STM32 development board using STM32CubeIDE.
+![STM32_Printout_ _Configurations](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/96b94cbe-d52a-43ed-8354-0e616d482035)
 
   
 ## **Jetson Nano Python Script:**
