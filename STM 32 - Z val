@@ -466,3 +466,37 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
+/* Function to process gyroscope data */
+void ProcessGyroData(void)
+{
+  // Read raw gyroscope data
+  L3GD20_ReadXYZAngRate_Raw(spi_Buffer);
+
+  // Convert raw data to physical units (degrees per second or radians per second)
+  float sensitivity = 0.00875; // Sensitivity of the gyroscope in degrees per second per digit
+  float Xrate = (float)(spi_Buffer[0] | (spi_Buffer[1] << 8)) * sensitivity;
+  float Yrate = (float)(spi_Buffer[2] | (spi_Buffer[3] << 8)) * sensitivity;
+  float Zrate = (float)(spi_Buffer[4] | (spi_Buffer[5] << 8)) * sensitivity;
+
+  // Apply calibration to compensate for biases or offsets (if needed)
+  // Calibration code goes here
+
+  // Apply filtering techniques to reduce noise (optional)
+  // Filtering code goes here
+
+  // Integrate angular rate data to calculate angle of rotation (simple integration)
+  static float prevXrate = 0, prevYrate = 0, prevZrate = 0;
+  float dt = 0.001; // Time step in seconds
+  Xval += (Xrate + prevXrate) * dt / 2.0;
+  Yval += (Yrate + prevYrate) * dt / 2.0;
+  Zval += (Zrate + prevZrate) * dt / 2.0;
+  prevXrate = Xrate;
+  prevYrate = Yrate;
+  prevZrate = Zrate;
+
+  // Compensate for drift using sensor fusion techniques (e.g., Kalman filter, complementary filter)
+  // Sensor fusion code goes here
+
+  // Store processed angular rate values in Xval, Yval, Zval variables
+}
