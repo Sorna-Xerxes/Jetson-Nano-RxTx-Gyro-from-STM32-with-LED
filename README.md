@@ -1,4 +1,4 @@
-# Jetson-Nano-RxTx-Gyro-from-STM32-(LED)
+# Jetson_Nano_Rx_STM32_Gyro_Tx_LED
 
 https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/62ed350d-d964-43b5-94dd-c907737a6582
 
