@@ -16,7 +16,7 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 ### Hardaware Requirements:
 
 **1. STM 32 F3 Discovery - Micro Controller**
-The STM32F3 series microcontrollers are  commonly used in a wide range of embedded applications, including industrial automation, consumer electronics, and IoT devices. They are suitable for applications that require precise timing, sensor data acquisition, and control tasks.
+The STM32F3 series microcontrollers are commonly used in a wide range of embedded applications, including industrial automation, consumer electronics, and IoT devices. They are suitable for applications that require precise timing, sensor data acquisition, and control tasks.
 - ARM Cortex-M4 core
 - Onboard Sensors (MEMS Gyroscope, MEMS Accelerometer, e-Compass)
 - lower processing power and are optimized for low power consumption 
