@@ -64,18 +64,25 @@ To run the code:
   
 ### Jetson Nano Connection with Visual Code:
 
-- **"Jetson Nano runs headless":** It operates without a monitor, keyboard, or mouse.
-- **"Configure network for SSH access":** Adjust network settings to connect to Jetson Nano remotely.
-- **"Use Visual Studio Code to manage port gateway":** VS Code sets up communication with Jetson Nano.
+- **Jetson Nano runs headless:** It operates without a monitor, keyboard, or mouse.
+- **Configure network for SSH access:** Adjust network settings to connect to Jetson Nano remotely.
+- **Use Visual Studio Code to manage port gateway:** VS Code sets up communication with Jetson Nano.Ensure that Python 3 is installed on Visual Code. Install the necessary dependencies by running the following command in the terminal:
 
-Ensure that Python 3 is installed on your Jetson Nano. Install the necessary dependencies by running the following command in the terminal:
-
+Install pySerial on Jetson Nano
 ```bash
-pip install pyserial
+unzip pyserial-master.zip
+cd pyserial-master
+sudo python3 setup.py install
 ```
-
-Run the Python script using the following command:
-
+- **Setup Communication Device Class on STM32:**
+Once connected figure out the address of the STM32, this can be done by running the following command in the terminal:
+```bash
+ls /dev/ttyA*
+```
+set the access permissions on the device’s address by running the following, remembering to replace with the device’s address.
+```bash
+sudo chmod 666 /dev/ttyACM0
+```
 # **Results**
 
 The system provides real-time indication of the roll and pitch angles of the STM32 development board through the onboard LEDs. As the orientation of the board changes, the LEDs adjust accordingly to reflect the current roll and pitch angles. This visual feedback allows users to monitor the orientation of the device and make informed decisions based on its position.
