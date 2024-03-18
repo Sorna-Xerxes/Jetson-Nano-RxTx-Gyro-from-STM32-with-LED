@@ -77,22 +77,32 @@ ls /dev/ttyA*
 ```bash
 sudo chmod 666 /dev/ttyACM0
 ```
-# **Results**
+## PYTHON SCRIPT LOGIC
+The `VS Code - X,Y,Z LED Logic (Final).py` provides real-time indication of the roll, pitch and yaw angles of the STM32 development board through the onboard LEDs. As the orientation of the board changes, the LEDs adjust accordingly to reflect the current roll and pitch angles. This visual feedback allows users to monitor the orientation of the device and make informed decisions based on its position
 
-The system provides real-time indication of the roll and pitch angles of the STM32 development board through the onboard LEDs. As the orientation of the board changes, the LEDs adjust accordingly to reflect the current roll and pitch angles. This visual feedback allows users to monitor the orientation of the device and make informed decisions based on its position.
+- **Request Gyro data**: print X,Y,Z of Previous posiiton, Current Position
+- **Parsing Gyro Data**: calculates its difference
+- **LED Logic**:
+```
+x_diff is > 5000, it's a "Pitch Down" movement. (LED 4)
+x_diff is < -5000, it's a "Pitch Up" movement. (LED 0)
+y_diff is > 20000, it's a "Roll West" movement (LED 6)
+y_diff is < -20000, it's a "Roll East" movement. (LED 2)
+```
 
 # **Outcome**
 
 The STM32 Roll and Pitch Indicator project demonstrates the integration of gyroscopic data sensing and LED control to create a practical orientation indicator system. The project showcases the capabilities of microcontroller-based systems for sensor integration and real-time data processing. Additionally, the project serves as a foundation for further exploration into embedded systems development and sensor-based applications.
 
-# **Dependencies**
+## DEPENDENCIES
 
-## **PySerial:**
-PySerial is a Python library used for serial communication. It provides support for accessing serial ports and communication with serial devices. Install PySerial using the following command:
+- **1. PySerial:** It is a Python library used for serial communication. It provides support for accessing serial ports and communication with serial devices. Install PySerial using the following command:
 ```bash
 pip install pyserial
 ```
+- **2. re:** The regular expression module in Python, utilized for pattern matching with regular expressions. In this context, it's employed to `extract x, y, and z coordinates from gyro data`.
 
+- **3 .time:** Python's standard library module offering various time-related functions. Within the code, it `introduces delays between operations`, preventing the code from executing too rapidly and potentially overloading the connected device.
 
 ## **link to Code**
 .
