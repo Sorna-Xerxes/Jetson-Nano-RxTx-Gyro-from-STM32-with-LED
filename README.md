@@ -15,7 +15,7 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 
 ### Hardaware Requirements:
 
-**1. STM 32 F3 Discovery - Micro Controller:** The STM32F3 series microcontrollers are commonly used in a wide range of embedded applications, including industrial automation, consumer electronics, and IoT devices. They are suitable for applications that require precise timing, sensor data acquisition, and control tasks.
+**1. STM 32 F3 Discovery (Micro Controller):** The STM32F3 series microcontrollers are commonly used in a wide range of embedded applications, including industrial automation, consumer electronics, and IoT devices. They are suitable for applications that require precise timing, sensor data acquisition, and control tasks.
 - ARM Cortex-M4 core
 - Onboard Sensors (MEMS Gyroscope, MEMS Accelerometer, e-Compass)
 - lower processing power and are optimized for low power consumption 
@@ -27,7 +27,7 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/e3f29be0-a8b1-41d4-a662-0e4d1704ee91
 
 
-**2. NVDIA Jetson Nano - Micro Processor:** The NVIDIA Jetson Nano is a small, powerful computer designed for AI and robotics applications. Jetson Nano is capable of running complex algorithms and deep learning models, making it suitable for tasks such as image recognition, object detection, and autonomous navigation.
+**2. NVDIA Jetson Nano (Micro Processor):** The NVIDIA Jetson Nano is a small, powerful computer designed for AI and robotics applications. Jetson Nano is capable of running complex algorithms and deep learning models, making it suitable for tasks such as image recognition, object detection, and autonomous navigation.
 - Quad-core ARM Cortex-A57 CPU with a NVIDIA Maxwell GPU.
 - Various interfaces: USB, HDMI, Ethernet, CSI camera interface, and GPIO headers.![Jetson_Nano](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/a241ce2a-41d3-4315-a7df-178b533d6317)
 
@@ -46,19 +46,22 @@ The following block diagram illustrates the system architecture and data flow be
 .
 .
 
-# **Parameters**
+### Data Parameters:
 
-Roll Angle: The angle of rotation around the longitudinal axis of the STM32 board, measured in degrees.
-Pitch Angle: The angle of rotation around the lateral axis of the STM32 board, measured in degrees.
+**Roll Angle:** The angle of rotation around the longitudinal axis of the STM32 board, measured in degrees.
+**Pitch Angle:** The angle of rotation around the lateral axis of the STM32 board, measured in degrees.
+**Yaw Angle:** The angle of rotation around the vertical axis of the STM32 board, measured in degrees.![Aircraft_Axis](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/38ef594b-36a5-4b1f-b638-c781e10af137)
 
-# **Instructions**
 
+## INSTRUCTIONS
 To run the code:
 
-## **STM32 Firmware:**
-Import the provided STM32 project into STM32CubeIDE.
-Configure the project settings to enable USB communication and integrate the gyroscope sensor.
-Flash the firmware onto the STM32 development board using STM32CubeIDE.
+**STM32 Firmware:**
+- Import the provided STM32 project file Project_Gyro.zip into STM32CubeIDE. (Unarchive it into the STM32 Workspace before importing).
+- All necessary project configurations, such as enabling USB communication and integrating the gyroscope sensor, have already been pre-configured. These settings encompass connectivity interfaces (SPI, I2C), clock configurations, baud rates (9600), etc.
+- Flash the firmware onto the STM32 development board using STM32CubeIDE.![STM32_Printout_ _Configurations](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/96b94cbe-d52a-43ed-8354-0e616d482035)
+
+  
 ## **Jetson Nano Python Script:**
 Ensure that Python 3 is installed on your Jetson Nano.
 Install the necessary dependencies by running the following command in the terminal:
@@ -106,3 +109,9 @@ USB_gyro_example.py: This Python script controls the STM32 board and indicates t
 
 The STM32 firmware was provided as part of the project materials.
 PySerial library: PySerial
+
+### Contributing to the Project
+Your contributions to this project are highly appreciated. To contribute:
+1. Fork the repository.
+2. Make your changes or enhancements.
+3. Submit a pull request for review.
