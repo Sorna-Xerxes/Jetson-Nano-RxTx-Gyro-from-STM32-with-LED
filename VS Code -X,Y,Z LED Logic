@@ -24,7 +24,6 @@ def lit_led(stm32, led_number):
     packet.append(0x01)  # Command for Set_LED
     packet.append(led_number)
     stm32.write(packet)
-    time.sleep(0.5)  # Add a delay of 0.5 seconds after LED update
 
 def main():
     port_name = "/dev/ttyACM0"
@@ -71,7 +70,6 @@ def main():
                         print("Roll East: Y decreasing by more than 20000")
                         lit_led(stm32, 2)  # Lit LED number 2 (roll east)
                 prev_x, prev_y, prev_z = x, y, z
-            time.sleep(1)  # Add a delay of 1 second between each iteration of the main loop
     except KeyboardInterrupt:
         print("Stopping...")
         stm32.close()
