@@ -15,8 +15,7 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 
 ### Hardaware Requirements:
 
-**1. STM 32 F3 Discovery - Micro Controller**
-The STM32F3 series microcontrollers are commonly used in a wide range of embedded applications, including industrial automation, consumer electronics, and IoT devices. They are suitable for applications that require precise timing, sensor data acquisition, and control tasks.
+**1. STM 32 F3 Discovery - Micro Controller:** The STM32F3 series microcontrollers are commonly used in a wide range of embedded applications, including industrial automation, consumer electronics, and IoT devices. They are suitable for applications that require precise timing, sensor data acquisition, and control tasks.
 - ARM Cortex-M4 core
 - Onboard Sensors (MEMS Gyroscope, MEMS Accelerometer, e-Compass)
 - lower processing power and are optimized for low power consumption 
@@ -28,8 +27,7 @@ The STM32F3 series microcontrollers are commonly used in a wide range of embedde
 https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/e3f29be0-a8b1-41d4-a662-0e4d1704ee91
 
 
-**2. NVDIA Jetson Nano - Micro Processor**
-The NVIDIA Jetson Nano is a small, powerful computer designed for AI and robotics applications. Jetson Nano is capable of running complex algorithms and deep learning models, making it suitable for tasks such as image recognition, object detection, and autonomous navigation.
+**2. NVDIA Jetson Nano - Micro Processor:** The NVIDIA Jetson Nano is a small, powerful computer designed for AI and robotics applications. Jetson Nano is capable of running complex algorithms and deep learning models, making it suitable for tasks such as image recognition, object detection, and autonomous navigation.
 - Quad-core ARM Cortex-A57 CPU with a NVIDIA Maxwell GPU.
 - Various interfaces: USB, HDMI, Ethernet, CSI camera interface, and GPIO headers.
 
@@ -44,8 +42,6 @@ Visual Studio Code connects to the NVIDIA Jetson Nano through a remote connectio
 # **Block Diagram**
 
 The following block diagram illustrates the system architecture and data flow between the components:
-
-. ![Alt text](Readme/ske.gif)
 .
 .
 .
