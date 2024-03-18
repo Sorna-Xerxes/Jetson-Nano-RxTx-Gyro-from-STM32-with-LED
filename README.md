@@ -117,8 +117,6 @@ pip install pyserial
 ## CREDITS
 The STM32F3 discovery board and Jetson Nano were provided as part of the project materials for the completion of our coursework in Embedded Systems for the MSc in Robotics, AI, and Autonomous Systems at City, University of London.
 
-Your text looks good! It's clear and concise. However, there's a small typo in "CONTRIBUTONS" which should be "CONTRIBUTIONS". Here's the corrected version:
-
 ## CONTRIBUTIONS ARE WELCOMED
 Contributions to this project are highly appreciated. To contribute:
 - Fork the repository.
