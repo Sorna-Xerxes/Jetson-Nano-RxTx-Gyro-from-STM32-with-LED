@@ -1,7 +1,11 @@
 # Jetson-Nano-RxTx-Gyro-from-STM32-with-LED
 STM32 Roll, Pitch & Yaw Indicator
 
- ![Alt text](Readme/STM32_Gyro_LED.mp4)
+
+https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/2a70756b-4fe0-4726-a968-2fa60467a578
+
+
+
  
 ## INTRODUCTION
 This project aims to visually represent the roll, pitch, and yaw of an STM32 development board using onboard LEDs. These angles, which determine the device's orientation relative to the horizontal plane, are calculated from gyroscopic data collected by the STM32 board and transmitted over USB to a Jetson Nano. On the Jetson Nano, a Python script receives, processes, and dynamically controls the onboard LEDs of the STM32 by sending commands back, providing a real-time indication of the device's orientation.
