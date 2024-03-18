@@ -1,50 +1,80 @@
 import serial
+import re
 import time
 
-port_name = "/dev/ttyACM0"
-stm32 = serial.Serial(port_name, 9600, timeout=1)
-print("open")
-
-while True:
-    # Command to request gyro data
+def read_gyro(stm32):
     packet = bytearray()
     packet.append(0x02)  # Command for get_gyro
-
     stm32.write(packet)
-    time.sleep(0.1) 
+    data = stm32.readline().decode("utf-8").strip()
+    return data
 
-    # Read gyro response
-    gyro_data = stm32.readline().decode("utf-8")
-    time.sleep(0.1)
+def extract_coordinates(data):
+    match = re.search(r'x: ([-+]?\d+\.\d+), y: ([-+]?\d+\.\d+), z: ([-+]?\d+\.\d+)', data)
+    if match:
+        x_coord = float(match.group(1))
+        y_coord = float(match.group(2))
+        z_coord = float(match.group(3))
+        return x_coord, y_coord, z_coord
+    else:
+        return None, None, None
 
-    # Parse gyro data
-    x = float(gyro_data.split(',')[0].split(':')[1].strip())
-    y = float(gyro_data.split(',')[1].split(':')[1].strip())
-    Z = float(gyro_data.split(',')[2].split(':')[1].strip())
+def lit_led(stm32, led_number):
+    packet = bytearray()
+    packet.append(0x01)  # Command for Set_LED
+    packet.append(led_number)
+    stm32.write(packet)
+    time.sleep(0.5)  # Add a delay of 0.5 seconds after LED update
 
-    # Determine LED based on X and Y values
-    led = None
-    if x > 0 and y > 0:
-        led = 5
-    elif x > 0 and y < 0:
-        led = 7
-    elif x < 0 and y < 0:
-        led = 1
-    elif x < 0 and y > 0:
-        led = 3
+def main():
+    port_name = "/dev/ttyACM0"
+    stm32 = serial.Serial(port_name, 9600, timeout=1)
+    print("Port Opened")
 
-    # Set LED command
-    if led is not None:
-        packet = bytearray()
-        packet.append(0x01)  # Command for setting LED
-        packet.append(led)   # LED number
-        
-        stm32.write(packet)
-        time.sleep(0.1)
-        data = stm32.readline().decode("utf-8")  # Read response
-        time.sleep(0.1)
-        print(data)
+    prev_x, prev_y, prev_z = None, None, None
 
-    time.sleep(3)  # Wait for 'n' seconds before requesting gyro data again
+    try:
+        while True:
+            data = read_gyro(stm32)
+            x, y, z = extract_coordinates(data)
+            if x is not None and y is not None and z is not None:
+                if prev_x is not None:
+                    x_diff = x - prev_x
+                    y_diff = y - prev_y
+                    z_diff = z - prev_z
+                   
+                    if x_diff > 5000:
+                        print("Previous X:", prev_x, "Previous Y:", prev_y, "Previous Z:", prev_z)
+                        print("Current X:", x, "Current Y:", y, "Current Z:", z)
+                        print("X Difference:", x_diff, "Y Difference:", y_diff, "Z Difference:", z_diff)
+                        print("Pitch Down: X increasing by more than 5000")
+                        lit_led(stm32, 4)  # Lit LED number 4 (pitch down)
+                        
+                    elif x_diff < -5000:
+                        print("Previous X:", prev_x, "Previous Y:", prev_y, "Previous Z:", prev_z)
+                        print("Current X:", x, "Current Y:", y, "Current Z:", z)
+                        print("X Difference:", x_diff, "Y Difference:", y_diff, "Z Difference:", z_diff)
+                        print("Pitch Up: X decreasing by more than 5000")
+                        lit_led(stm32, 0)  # Lit LED number 0 (pitch up)
+                if prev_y is not None:
+                    y_diff = y - prev_y
+                    if y_diff > 20000:
+                        print("Previous X:", prev_x, "Previous Y:", prev_y, "Previous Z:", prev_z)
+                        print("Current X:", x, "Current Y:", y, "Current Z:", z)
+                        print("X Difference:", x_diff, "Y Difference:", y_diff, "Z Difference:", z_diff)
+                        print("Roll West: Y increasing by more than 20000")
+                        lit_led(stm32, 6)  # Lit LED number 6 (roll west)
+                    elif y_diff < -20000:
+                        print("Previous X:", prev_x, "Previous Y:", prev_y, "Previous Z:", prev_z)
+                        print("Current X:", x, "Current Y:", y, "Current Z:", z)
+                        print("X Difference:", x_diff, "Y Difference:", y_diff, "Z Difference:", z_diff)
+                        print("Roll East: Y decreasing by more than 20000")
+                        lit_led(stm32, 2)  # Lit LED number 2 (roll east)
+                prev_x, prev_y, prev_z = x, y, z
+            time.sleep(1)  # Add a delay of 1 second between each iteration of the main loop
+    except KeyboardInterrupt:
+        print("Stopping...")
+        stm32.close()
 
-stm32.close()
+if __name__ == "__main__":
+    main()
