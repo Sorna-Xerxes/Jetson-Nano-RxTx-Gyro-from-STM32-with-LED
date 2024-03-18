@@ -50,32 +50,31 @@ The following block diagram illustrates the system architecture and data flow be
 - **Roll Angle:** The angle of rotation around the longitudinal axis of the STM32 board, measured in degrees.
 - **Pitch Angle:** The angle of rotation around the lateral axis of the STM32 board, measured in degrees.
 - **Yaw Angle:** The angle of rotation around the vertical axis of the STM32 board, measured in degrees.
-
 ![Aircraft_Axis](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/2bb88cf6-e7ce-447b-9de9-35a04dfab193)
 
 ## INSTRUCTIONS
 To run the code:
 
-**STM32 Firmware:**
+### STM32 Firmware:
 - Import the provided STM32 project file Project_Gyro.zip into STM32CubeIDE. (Unarchive it into the STM32 Workspace before importing).
 - All necessary project configurations, such as enabling USB communication and integrating the gyroscope sensor, have already been pre-configured. These settings encompass connectivity interfaces (SPI, I2C), clock configurations, baud rates (9600), etc.
 - Flash the firmware onto the STM32 development board using STM32CubeIDE.
 ![STM32_Printout_ _Configurations](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/96b94cbe-d52a-43ed-8354-0e616d482035)
 
   
-## **Jetson Nano Python Script:**
-Ensure that Python 3 is installed on your Jetson Nano.
-Install the necessary dependencies by running the following command in the terminal:
+### Jetson Nano Connection with Visual Code:
+
+- **"Jetson Nano runs headless":** It operates without a monitor, keyboard, or mouse.
+- **"Configure network for SSH access":** Adjust network settings to connect to Jetson Nano remotely.
+- **"Use Visual Studio Code to manage port gateway":** VS Code sets up communication with Jetson Nano.
+
+Ensure that Python 3 is installed on your Jetson Nano. Install the necessary dependencies by running the following command in the terminal:
 
 ```bash
 pip install pyserial
 ```
 
 Run the Python script using the following command:
-
-```bash
-python USB_gyro_example.py
-```
 
 # **Results**
 
