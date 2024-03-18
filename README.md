@@ -2,18 +2,31 @@
 STM32 Roll, Pitch & Yaw Indicator
 
 ## Introduction
+This project aims to visually represent the roll, pitch, and yaw of an STM32 development board using onboard LEDs. These angles, which determine the device's orientation relative to the horizontal plane, are calculated from gyroscopic data collected by the STM32 board and transmitted over USB to a Jetson Nano. On the Jetson Nano, a Python script receives, processes, and dynamically controls the onboard LEDs of the STM32 by sending commands back, providing a real-time indication of the device's orientation.
 
-The STM32 Roll and Pitch Indicator project aims to create a system that visually represents the roll and pitch of an STM32 development board using onboard LEDs. The roll and pitch angles, which determine the orientation of the device relative to the horizontal plane, are obtained from gyroscopic data collected by the STM32 board and transmitted over USB. A Python script running on a Jetson Nano single-board computer receives this data and controls the onboard LEDs accordingly, providing a real-time indication of the device's orientation.
+## System Overview
 
-## Overview
+### Hardaware Requirements:
 
-The system comprises two main components:
+**1. STM 32 F3 Discovery - Micro Controller**
+The STM32F3 series microcontrollers are  commonly used in a wide range of embedded applications, including industrial automation, consumer electronics, and IoT devices. They are suitable for applications that require precise timing, sensor data acquisition, and control tasks.
+- ARM Cortex-M4 core
+- Onboard Sensors (MEMS Gyroscope, MEMS Accelerometer, e-Compass)
+- lower processing power and are optimized for low power consumption 
+- Integrated peripherals such as GPIO, UART, SPI, I2C, ADC, DAC, timers, and PWM controllers.
 
-### 1.STM32 Firmware:
-This component is responsible for collecting gyroscopic data from onboard sensors and transmitting it over USB to the Jetson Nano. The firmware is developed using STM32CubeIDE, an integrated development environment for STM32 microcontrollers. The firmware is configured to interface with the gyroscope sensor, read the roll and pitch angles, and format the data for transmission over USB.
+**2. NVDIA Jetson Nano - Micro Processor**
+The NVIDIA Jetson Nano is a small, powerful computer designed for AI and robotics applications. Jetson Nano is capable of running complex algorithms and deep learning models, making it suitable for tasks such as image recognition, object detection, and autonomous navigation.
+- Quad-core ARM Cortex-A57 CPU with a NVIDIA Maxwell GPU.
+- Various interfaces: USB, HDMI, Ethernet, CSI camera interface, and GPIO headers.
 
-## **2.Jetson Nano Python Script:** 
-The Python script running on the Jetson Nano communicates with the STM32 board over USB to receive gyroscopic data. It parses the received data to extract the roll and pitch angles and then controls the onboard LEDs of the STM32 board to visually indicate these angles. The script utilizes the PySerial library for serial communication with the STM32 board.
+## Software Requirements:
+
+### 1.STM32 Cube IDE:
+Using STM32CubeIDE, an integrated development environment for STM32 microcontrollers, the firmware is developed to interface with the gyroscope sensor, collect data from onboard sensors, read the roll, pitch, and yaw angles, and transmit them over USB to the Jetson Nano.
+
+### 2. Visual Studio Code:
+Visual Studio Code connects to the NVIDIA Jetson Nano through a remote connection. The Python script running on the Jetson Nano communicates with the STM32 board over USB to receive gyroscopic data. It reads and parses the received data to extract the roll, pitch, and yaw angles, and then controls the onboard LEDs of the STM32 board to visually indicate these angles. The script utilizes the PySerial library for serial communication with the STM32 board.
 
 # **Block Diagram**
 
