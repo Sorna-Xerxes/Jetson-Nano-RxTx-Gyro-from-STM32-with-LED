@@ -1,0 +1,85 @@
+import serial
+import re
+import time
+
+def read_gyro(stm32):
+    packet = bytearray()
+    packet.append(0x02)  # Command for get_gyro
+    stm32.write(packet)
+    data = stm32.readline().decode("utf-8").strip()
+    return data
+
+def extract_coordinates(data):
+    match = re.search(r'x: ([-+]?\d+\.\d+), y: ([-+]?\d+\.\d+), z: ([-+]?\d+\.\d+)', data)
+    if match:
+        x_coord = float(match.group(1))
+        y_coord = float(match.group(2))
+        z_coord = float(match.group(3))
+        return x_coord, y_coord, z_coord
+    else:
+        return None, None, None
+
+def lit_led(stm32, led_number):
+    packet = bytearray()
+    packet.append(0x01)  # Command for Set_LED
+    packet.append(led_number)
+    stm32.write(packet)  # Add a delay of 0.5 seconds after LED update
+
+def main():
+    port_name = "/dev/ttyACM0"
+    stm32 = serial.Serial(port_name, 9600, timeout=1)
+    print("Port Opened")
+
+    prev_x, prev_y, prev_z = None, None, None
+
+    try:
+        while True:
+            data = read_gyro(stm32)
+            x, y, z = extract_coordinates(data)
+            if x is not None and y is not None and z is not None:
+                if prev_x is not None:
+                    x_diff = x - prev_x
+                    y_diff = y - prev_y
+                    z_diff = z - prev_z
+
+                    print("Previous X:", prev_x, "Previous Y:", prev_y, "Previous Z:", prev_z)
+                    print("Current X:", x, "Current Y:", y, "Current Z:", z)
+                    print("X Difference:", x_diff, "Y Difference:", y_diff, "Z Difference:", z_diff)
+
+                    if x_diff > 5000:
+                        print("Pitch Down")
+                        lit_led(stm32, 4)  # Lit LED number 4 (pitch down)
+                    elif x_diff < -5000:
+                        print("Pitch Up")
+                        lit_led(stm32, 0)  # Lit LED number 0 (pitch up)
+
+                    elif y_diff > 20000:
+                        print("Roll West")
+                        lit_led(stm32, 6)  # Lit LED number 6 (roll west)
+                    elif y_diff < -20000:
+                        print("Roll East")
+                        lit_led(stm32, 2)  # Lit LED number 2 (roll east)
+
+                    elif x_diff > 5000 and y_diff > 20000:
+                        print("Pitch Down and Roll West")
+                        lit_led(stm32, 5)  # Lit LED number 5 (pitch down and roll west)
+                    elif x_diff < -5000 and y_diff > 20000:
+                        print("Pitch Up and Roll West")
+                        lit_led(stm32, 7)  # Lit LED number 7 (pitch up and roll west)
+
+                    elif x_diff > 5000 and y_diff < -20000:
+                        print("Pitch Down and Roll East")
+                        lit_led(stm32, 3)  # Lit LED number 3 (pitch down and roll east)
+                    elif x_diff < -5000 and y_diff < -20000:
+                        print("Pitch Up and Roll East")
+                        lit_led(stm32, 1)  # Lit LED number 1 (pitch up and roll east)
+
+                prev_x, prev_y, prev_z = x, y, z
+                time.sleep(1)  # Add a delay between each iteration of the main loop
+
+    except KeyboardInterrupt:
+        print("Stopping...")
+        stm32.close()
+
+if __name__ == "__main__":
+    main()
