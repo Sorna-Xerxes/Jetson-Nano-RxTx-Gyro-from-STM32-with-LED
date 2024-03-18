@@ -35,7 +35,7 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 
 **1.STM32 Cube IDE:** Using STM32CubeIDE, an integrated development environment for STM32 microcontrollers, the firmware is developed to interface with the gyroscope sensor, collect data from onboard sensors, read the roll, pitch, and yaw angles, and transmit them over USB to the Jetson Nano.
 
-**2. Visual Studio Code:**Visual Studio Code connects to the NVIDIA Jetson Nano through a remote connection. The Python script running on the Jetson Nano communicates with the STM32 board over USB to receive gyroscopic data. It reads and parses the received data to extract the roll, pitch, and yaw angles, and then controls the onboard LEDs of the STM32 board to visually indicate these angles. The script utilizes the PySerial library for serial communication with the STM32 board.
+**2. Visual Studio Code:** Visual Studio Code connects to the NVIDIA Jetson Nano through a remote connection. The Python script running on the Jetson Nano communicates with the STM32 board over USB to receive gyroscopic data. It reads and parses the received data to extract the roll, pitch, and yaw angles, and then controls the onboard LEDs of the STM32 board to visually indicate these angles. The script utilizes the PySerial library for serial communication with the STM32 board.
 
 ## BLOCK DIAGRAM
 
