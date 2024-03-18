@@ -104,12 +104,12 @@ The STM32 Roll, Pitch and Yaw Indicator project demonstrates the integration of 
 
 ## Table of Contents
 
-| Final Name |   Contents      | 
-| -----------|:---------  ----:|
-| Project_Gyro_LED.zip | Contains the entire STM32 project that is to be flashed onto the STM32 |
-| VS Code - X,Y,Z (LED Logic - Final) | Contains the Python script that is to be run in VS Code after setting up the connection |
-| pyserial-master.zip | Install pySerial on Jetson Nano |
-| VS Code - X,Y,Z (LED Logic - Future) | Contains the Python code for future prospects where the code can be improvised with data parsing, extending LED logic for three axes, or improvising using data fusion |
+| File Name        | Brief           |
+| ------------- |:-------------:|
+| Project_Gyro_LED.zip      | Contains the entire STM32 project that is to be flashed onto the STM32 |
+| VS Code - X,Y,Z (LED Logic - Final)      | Contains the Python script that is to be run in VS Code after setting up the connection      |
+| pyserial-master.zip      | Install pySerial on Jetson Nano      |
+|  VS Code - X,Y,Z (LED Logic - Future)      | Contains the Python code for future prospects where the code can be improvised with data parsing, extending LED logic for three axes, or improvising using data fusion      |
 
 ## Credits
 
