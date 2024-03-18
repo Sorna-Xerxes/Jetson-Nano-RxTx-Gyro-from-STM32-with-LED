@@ -39,7 +39,7 @@ Using STM32CubeIDE, an integrated development environment for STM32 microcontrol
 ### 2. Visual Studio Code:
 Visual Studio Code connects to the NVIDIA Jetson Nano through a remote connection. The Python script running on the Jetson Nano communicates with the STM32 board over USB to receive gyroscopic data. It reads and parses the received data to extract the roll, pitch, and yaw angles, and then controls the onboard LEDs of the STM32 board to visually indicate these angles. The script utilizes the PySerial library for serial communication with the STM32 board.
 
-# **Block Diagram**
+## BLOCK DIAGRAM
 
 The following block diagram illustrates the system architecture and data flow between the components:
 .
