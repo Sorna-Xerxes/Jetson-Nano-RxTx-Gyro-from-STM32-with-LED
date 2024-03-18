@@ -31,7 +31,7 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 **2. NVDIA Jetson Nano (Micro Processor):** The NVIDIA Jetson Nano is a small, powerful computer designed for AI and robotics applications. Jetson Nano is capable of running complex algorithms and deep learning models, making it suitable for tasks such as image recognition, object detection, and autonomous navigation.
 - Quad-core ARM Cortex-A57 CPU with a NVIDIA Maxwell GPU.
 - Various interfaces: USB, HDMI, Ethernet, CSI camera interface, and GPIO headers.
-![Jetson_Nano](https://github.com/Sorna-Xerxes/Jetson_Nano_Rx_STM32_Gyro_Tx_LED/assets/147555989/80c9b365-d024-45b7-9eeb-9c446f4656fd)
+![Jetson_Nano](https://github.com/Sorna-Xerxes/Jetson_Nano_Rx_STM32_Gyro_Tx_LED/assets/147555989/77224313-9f54-4b2a-aec5-c735794638d2)
 
 
 ### Software Requirements:
