@@ -30,7 +30,8 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 
 **2. NVDIA Jetson Nano (Micro Processor):** The NVIDIA Jetson Nano is a small, powerful computer designed for AI and robotics applications. Jetson Nano is capable of running complex algorithms and deep learning models, making it suitable for tasks such as image recognition, object detection, and autonomous navigation.
 - Quad-core ARM Cortex-A57 CPU with a NVIDIA Maxwell GPU.
-- Various interfaces: USB, HDMI, Ethernet, CSI camera interface, and GPIO headers.![Jetson_Nano](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/a241ce2a-41d3-4315-a7df-178b533d6317)
+- Various interfaces: USB, HDMI, Ethernet, CSI camera interface, and GPIO headers.
+![Jetson_Nano](https://github.com/Sorna-Xerxes/Jetson_Nano_Rx_STM32_Gyro_Tx_LED/assets/147555989/80c9b365-d024-45b7-9eeb-9c446f4656fd)
 
 
 ### Software Requirements:
@@ -54,6 +55,7 @@ To run the code:
 - Import the provided STM32 project file Project_Gyro.zip into STM32CubeIDE. (Unarchive it into the STM32 Workspace before importing).
 - All necessary project configurations, such as enabling USB communication and integrating the gyroscope sensor, have already been pre-configured. These settings encompass connectivity interfaces (SPI, I2C), clock configurations, baud rates (9600), etc.
 - Flash the firmware onto the STM32 development board using STM32CubeIDE.
+  
 ![STM32_Printout_ _Configurations](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/96b94cbe-d52a-43ed-8354-0e616d482035)
 
   
