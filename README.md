@@ -12,6 +12,7 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 - **Real-time Feedback**: LEDs provide real-time indication of device orientation relative to the horizontal plane.
 
 ## SYSTEM OVERVIEW
+The following **block diagram** illustrates the system architecture and data flow between the components:
 ![Block_diagram](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/b7dfa0a6-d21b-4d22-8291-93fdbe78a7b2)
 
 ### Hardaware Requirements:
@@ -38,14 +39,6 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 **1.STM32 Cube IDE:** Using STM32CubeIDE, an integrated development environment for STM32 microcontrollers, the firmware is developed to interface with the gyroscope sensor, collect data from onboard sensors, read the roll, pitch, and yaw angles, and transmit them over USB to the Jetson Nano.
 
 **2. Visual Studio Code:** Visual Studio Code connects to the NVIDIA Jetson Nano through a remote connection. The Python script running on the Jetson Nano communicates with the STM32 board over USB to receive gyroscopic data. It reads and parses the received data to extract the roll, pitch, and yaw angles, and then controls the onboard LEDs of the STM32 board to visually indicate these angles. The script utilizes the PySerial library for serial communication with the STM32 board.
-
-## BLOCK DIAGRAM
-
-The following block diagram illustrates the system architecture and data flow between the components:
-.
-.
-.
-.
 
 ### Data Parameters:
 - **Roll Angle:** The angle of rotation around the longitudinal axis of the STM32 board, measured in degrees.
