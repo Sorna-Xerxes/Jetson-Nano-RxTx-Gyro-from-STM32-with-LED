@@ -5,11 +5,10 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 
 ## INTRODUCTION
 - **Objective**: Visually represent roll, pitch, and yaw of an STM32 development board using onboard LEDs.
-- **Data Source**: Gyroscopic data collected by the STM32 board.
-- **Data Transmission**: Data transmitted over USB to a Jetson Nano.
-- **Data Processing**: Python script running on Jetson Nano receives and processes data.
-- **Control**: Python script dynamically controls onboard LEDs of the STM32.
-- **Real-time Feedback**: LEDs provide real-time indication of device orientation relative to the horizontal plane.
+- **Data Source**: *Gyroscopic data* collected by the STM32 board.
+- **Data Transmission**: Data transmitted over *USB* to a Jetson Nano.
+- **Data Processing and Control**: *Python script* running on Jetson Nano receives the data and parses it then dynamically controls onboard LEDs of the STM32.
+- **Real-time Feedback**: *LEDs* provide real-time indication of device orientation relative to the horizontal plane.
 
 ## SYSTEM OVERVIEW
 The following **block diagram** illustrates the system architecture and data flow between the components:
@@ -98,18 +97,18 @@ pip install pyserial
 ```
 - **2. re:** The regular expression module in Python, utilized for pattern matching with regular expressions. In this context, it's employed to `extract x, y, and z coordinates from gyro data`.
 
-- **3 .time:** Python's standard library module offering various time-related functions. Within the code, it `introduces delays between operations`, preventing the code from executing too rapidly and potentially overloading the connected device.
+- **3. time:** Python's standard library module offering various time-related functions. Within the code, it `introduces delays between operations`, preventing the code from executing too rapidly and potentially overloading the connected device.
 
 ## OUTCOME
 The STM32 Roll, Pitch and Yaw Indicator project demonstrates the integration of gyroscopic data sensing and LED control to create a practical orientation indicator system. The project showcases the capabilities of microcontroller-based systems for sensor integration and real-time data processing. Additionally, the project serves as a foundation for further exploration into embedded systems development and sensor-based applications.
 
 ## Table of Contents
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Tables        | Are           | 
+| ------------- |:-------------:|
+| Project_Gyro_LED.zip      |  centered      |
+| col 2 is      | centered      |
+| zebra stripes | are neat      |
 
 ## Credits
 
