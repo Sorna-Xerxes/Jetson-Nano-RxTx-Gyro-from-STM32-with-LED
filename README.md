@@ -50,8 +50,8 @@ The following block diagram illustrates the system architecture and data flow be
 - **Roll Angle:** The angle of rotation around the longitudinal axis of the STM32 board, measured in degrees.
 - **Pitch Angle:** The angle of rotation around the lateral axis of the STM32 board, measured in degrees.
 - **Yaw Angle:** The angle of rotation around the vertical axis of the STM32 board, measured in degrees.
-![Aircraft_Axis](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/38ef594b-36a5-4b1f-b638-c781e10af137)
 
+![Aircraft_Axis](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/2bb88cf6-e7ce-447b-9de9-35a04dfab193)
 
 ## INSTRUCTIONS
 To run the code:
