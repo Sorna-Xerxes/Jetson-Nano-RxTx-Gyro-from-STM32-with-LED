@@ -20,7 +20,8 @@ The STM32F3 series microcontrollers are commonly used in a wide range of embedde
 - ARM Cortex-M4 core
 - Onboard Sensors (MEMS Gyroscope, MEMS Accelerometer, e-Compass)
 - lower processing power and are optimized for low power consumption 
-- Integrated peripherals such as GPIO, UART, SPI, I2C, ADC, DAC, timers, and PWM controllers.![L3GD20_Gyroscope](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/e2458824-6fc0-4091-ad5d-83d24a876271)
+- Integrated peripherals such as GPIO, UART, SPI, I2C, ADC, DAC, timers, and PWM controllers.![L3GD20_Gyroscope](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/abb31c4b-3062-4631-b696-ae6d6915a9f0)
+
 
 
 
