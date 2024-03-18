@@ -73,7 +73,7 @@ Once connected figure out the address of the STM32, this can be done by running 
 ```bash
 ls /dev/ttyA*
 ```
-set the access permissions on the device’s address by running the following, remembering to replace with the device’s address.
+   set the access permissions on the device’s address by running the following, remembering to replace with the device’s address.
 ```bash
 sudo chmod 666 /dev/ttyACM0
 ```
