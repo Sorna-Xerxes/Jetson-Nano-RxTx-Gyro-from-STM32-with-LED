@@ -1,6 +1,6 @@
 # Jetson-Nano-RxTx-Gyro-from-STM32-with-LED
 
-https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/33f571d9-e334-491f-8570-7b2166bb7b83
+https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/62ed350d-d964-43b5-94dd-c907737a6582
 
 
 ## INTRODUCTION
@@ -17,8 +17,7 @@ The STM32F3 series microcontrollers are  commonly used in a wide range of embedd
 - lower processing power and are optimized for low power consumption 
 - Integrated peripherals such as GPIO, UART, SPI, I2C, ADC, DAC, timers, and PWM controllers.
 
-
-https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/c14ae1b9-a0b8-40bc-9708-01f3a1c83135
+https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/e3f29be0-a8b1-41d4-a662-0e4d1704ee91
 
 
 **2. NVDIA Jetson Nano - Micro Processor**
