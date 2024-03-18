@@ -12,6 +12,7 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 - **Real-time Feedback**: LEDs provide real-time indication of device orientation relative to the horizontal plane.
 
 ## SYSTEM OVERVIEW
+![Block_diagram](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/b7dfa0a6-d21b-4d22-8291-93fdbe78a7b2)
 
 ### Hardaware Requirements:
 
