@@ -90,10 +90,6 @@ y_diff is > 20000, it's a "Roll West" movement (LED 6)
 y_diff is < -20000, it's a "Roll East" movement. (LED 2)
 ```
 
-# **Outcome**
-
-The STM32 Roll and Pitch Indicator project demonstrates the integration of gyroscopic data sensing and LED control to create a practical orientation indicator system. The project showcases the capabilities of microcontroller-based systems for sensor integration and real-time data processing. Additionally, the project serves as a foundation for further exploration into embedded systems development and sensor-based applications.
-
 ## DEPENDENCIES
 
 - **1. PySerial:** It is a Python library used for serial communication. It provides support for accessing serial ports and communication with serial devices. Install PySerial using the following command:
@@ -104,21 +100,23 @@ pip install pyserial
 
 - **3 .time:** Python's standard library module offering various time-related functions. Within the code, it `introduces delays between operations`, preventing the code from executing too rapidly and potentially overloading the connected device.
 
-## **link to Code**
-.
-.
-.
-.
-# **Table of Contents**
+## OUTCOME
+The STM32 Roll, Pitch and Yaw Indicator project demonstrates the integration of gyroscopic data sensing and LED control to create a practical orientation indicator system. The project showcases the capabilities of microcontroller-based systems for sensor integration and real-time data processing. Additionally, the project serves as a foundation for further exploration into embedded systems development and sensor-based applications.
 
-USB_gyro_example.py: This Python script controls the STM32 board and indicates the roll and pitch using onboard LEDs.
+## Table of Contents
 
-# **Credits**
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+## Credits
 
 The STM32 firmware was provided as part of the project materials.
 PySerial library: PySerial
 
-### Contributing to the Project
+## Contributions to the Project
 Your contributions to this project are highly appreciated. To contribute:
 1. Fork the repository.
 2. Make your changes or enhancements.
