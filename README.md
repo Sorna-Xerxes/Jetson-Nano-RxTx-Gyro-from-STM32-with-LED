@@ -43,7 +43,9 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 - **Roll Angle:** The angle of rotation around the longitudinal axis of the STM32 board, measured in degrees.
 - **Pitch Angle:** The angle of rotation around the lateral axis of the STM32 board, measured in degrees.
 - **Yaw Angle:** The angle of rotation around the vertical axis of the STM32 board, measured in degrees.
-![Aircraft_Axis](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/2bb88cf6-e7ce-447b-9de9-35a04dfab193)
+  
+![Aircraft_Axis](https://github.com/Sorna-Xerxes/Jetson_Nano_Rx_STM32_Gyro_Tx_LED/assets/147555989/908bf1d1-fe9f-48da-80b2-1946cadb9f12)
+
 
 ## INSTRUCTIONS
 To run the code:
