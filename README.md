@@ -1,11 +1,6 @@
 # Jetson-Nano-RxTx-Gyro-from-STM32-with-LED
 STM32 Roll, Pitch & Yaw Indicator
-
-
 https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/2a70756b-4fe0-4726-a968-2fa60467a578
-
-
-
  
 ## INTRODUCTION
 This project aims to visually represent the roll, pitch, and yaw of an STM32 development board using onboard LEDs. These angles, which determine the device's orientation relative to the horizontal plane, are calculated from gyroscopic data collected by the STM32 board and transmitted over USB to a Jetson Nano. On the Jetson Nano, a Python script receives, processes, and dynamically controls the onboard LEDs of the STM32 by sending commands back, providing a real-time indication of the device's orientation.
@@ -20,6 +15,9 @@ The STM32F3 series microcontrollers are  commonly used in a wide range of embedd
 - Onboard Sensors (MEMS Gyroscope, MEMS Accelerometer, e-Compass)
 - lower processing power and are optimized for low power consumption 
 - Integrated peripherals such as GPIO, UART, SPI, I2C, ADC, DAC, timers, and PWM controllers.
+
+- **MEMS Gyroscope Working Principle**
+https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/0dded737-8e2c-4f9b-94af-f902025f521d
 
 **2. NVDIA Jetson Nano - Micro Processor**
 The NVIDIA Jetson Nano is a small, powerful computer designed for AI and robotics applications. Jetson Nano is capable of running complex algorithms and deep learning models, making it suitable for tasks such as image recognition, object detection, and autonomous navigation.
