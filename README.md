@@ -32,7 +32,7 @@ Visual Studio Code connects to the NVIDIA Jetson Nano through a remote connectio
 
 The following block diagram illustrates the system architecture and data flow between the components:
 
-.
+. ![Alt text](Readme/ske.gif)
 .
 .
 .
