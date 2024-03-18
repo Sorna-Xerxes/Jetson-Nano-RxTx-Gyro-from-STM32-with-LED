@@ -93,8 +93,6 @@ PySerial is a Python library used for serial communication. It provides support 
 pip install pyserial
 ```
 
-## **STM32 Firmware:** 
-The STM32 firmware provided in this project is required to enable USB communication and obtain gyroscopic data from the STM32 development board.
 
 ## **link to Code**
 .
