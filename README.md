@@ -4,12 +4,12 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 
 
 ## INTRODUCTION
--**Objective**: Visually represent roll, pitch, and yaw of an STM32 development board using onboard LEDs.
--**Data Source**: Gyroscopic data collected by the STM32 board.
--**Data Transmission**: Data transmitted over USB to a Jetson Nano.
--**Data Processing**: Python script running on Jetson Nano receives and processes data.
--**Control**: Python script dynamically controls onboard LEDs of the STM32.
--**Real-time Feedback**: LEDs provide real-time indication of device orientation relative to the horizontal plane.
+- **Objective**: Visually represent roll, pitch, and yaw of an STM32 development board using onboard LEDs.
+- **Data Source**: Gyroscopic data collected by the STM32 board.
+- **Data Transmission**: Data transmitted over USB to a Jetson Nano.
+- **Data Processing**: Python script running on Jetson Nano receives and processes data.
+- **Control**: Python script dynamically controls onboard LEDs of the STM32.
+- **Real-time Feedback**: LEDs provide real-time indication of device orientation relative to the horizontal plane.
 
 ## SYSTEM OVERVIEW
 
