@@ -116,9 +116,9 @@ pip install pyserial
 | File Name        | Brief           |
 | ------------- |:-------------:|
 | Project_Gyro_LED.zip      | Contains the entire STM32 project that is to be flashed onto the STM32 |
-| VS Code - X,Y,Z (LED Logic - Final)      | Contains the Python script that is to be run in VS Code after setting up the connection      |
+| VS Code - 4 LED Logic      | Contains the Python script with 4 LED Logic that is to be run in VS Code after setting up the connection      |
 | pyserial-master.zip      | Install pySerial on Jetson Nano      |
-|  VS Code - X,Y,Z (LED Logic - Future)      | Contains the Python code for future prospects where the code can be improvised with data parsing, extending LED logic for three axes, or improvising using data fusion      |
+|  VS Code - 8 LED Logic      | Contains the Python code with 8 LED logic where the code can be improvised with data parsing or improvising using data fusion      |
 
 ## CREDITS
 The STM32F3 discovery board and Jetson Nano were provided as part of the project materials for the completion of our coursework in Embedded Systems for the MSc in Robotics, AI, and Autonomous Systems at City, University of London.
