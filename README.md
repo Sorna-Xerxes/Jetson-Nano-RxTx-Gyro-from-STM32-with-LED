@@ -12,7 +12,9 @@ https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets
 
 ## SYSTEM OVERVIEW
 The following **block diagram** illustrates the system architecture and data flow between the components:
-![Block_diagram](https://github.com/Sorna-Xerxes/Jetson-Nano-RxTx-Gyro-from-STM32-with-LED/assets/147555989/b7dfa0a6-d21b-4d22-8291-93fdbe78a7b2)
+
+![Block diagram](https://github.com/Sorna-Xerxes/Jetson_Nano_Rx_STM32_Gyro_Tx_LED/assets/147555989/88478865-0891-4367-9eef-722a2ce04212)
+
 
 ### Hardaware Requirements:
 
